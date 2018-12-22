@@ -1,0 +1,33 @@
+
+@import "../../../variables";
+
+.login-img {
+  padding-left: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.welcome {
+  display: flex;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #34495e;
+  }
+
+  p.welcome-info {
+    font-weight: bold;
+    color: $INFO_COLOR;
+  }
+}
+
+form{
+  margin-top: 25px;
+}
+
+.after-form{
+  margin-top: 30px;
+}
