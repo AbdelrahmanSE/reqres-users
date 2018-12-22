@@ -1,0 +1,13 @@
+@import "../../../variables";
+
+.header {
+  background: $SECONDARY_HEADER_BG_COLOR;
+  padding: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1{
+  font-size: 30px;
+  font-weight: bold;
+  color: $SECONDARY_FONT_COLOR;
+}
