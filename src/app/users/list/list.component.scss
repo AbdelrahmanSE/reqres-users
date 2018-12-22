@@ -1,0 +1,95 @@
+@import "../../../variables";
+
+.user-list {
+  .user-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+
+  .user-name {
+    color: $SECONDARY_FONT_COLOR;
+    margin: auto 10px;
+    font-weight: 500;
+  }
+}
+
+.users-list {
+  padding: 15px;
+
+  .list-header {
+    border: 0;
+    font-weight: 500;
+    color: $INFO_COLOR;
+    font-size: 12px;
+    margin: 0 15px;
+  }
+
+  .list-item {
+    padding: 15px 0;
+    margin: 0 15px;
+    &:not(:last-child) {
+      border-bottom: 1px solid #dedede;
+    }
+    .row {
+      padding: 15px 0;
+      margin: 0;
+      cursor: pointer;
+      border-radius: 10px;
+      &:hover {
+        background-color: rgba(142, 68, 173, 0.05);
+      }
+    }
+  }
+
+  .centerialize {
+    display: flex;
+
+    >div {
+      margin-top: auto;
+      margin-bottom: auto;
+      display: flex;
+
+      app-edit {
+        margin-left: -7px;
+      }
+
+      >div:last-child {
+        margin-left: 40px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+
+.loading-more {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: block;
+  div{
+    color: #8e44ad;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+.box{
+  .users-list-container{
+    width: 100%;
+  }
+  .single-user-container{
+    display: none;
+    width: 0;
+  }
+  &.opened{
+    .users-list-container{
+      width: 78%;
+    }
+    .single-user-container{
+      width: 22%;
+    }
+  }
+}

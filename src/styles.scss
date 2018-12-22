@@ -1,6 +1,6 @@
 /** External Imports **/
 // Google Fonts
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700');
 @import "variables";
 
 
@@ -47,3 +47,18 @@ label{
   background-color: #ffffff;
   border-color: $INPUT_BORDER_COLORS;
 }
+
+
+.btn-action{
+  border-radius: 3px;
+  background-color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $LINK_COLOR;
+  margin: 0 7px;
+}
+
+button{
+  cursor: pointer;
+}
+
