@@ -23,10 +23,13 @@ export class ListComponent implements OnInit {
     ) {}
     users: User[];
     selected: User;
+    loadMore: boolean;
+    userAllDetails: User;
 
     @ViewChild('userContainer') userContainer: ElementRef;
 
     ngOnInit() {
+        this.loadMore = false;
         this.usersService.importUsers();
         this.store.select('Users').subscribe(users => {
             this.users = users.users;
@@ -36,8 +39,10 @@ export class ListComponent implements OnInit {
     }
 
     selectUser(user: User) {
+        this.userAllDetails = null;
+        this.store.dispatch(new UsersActions.SelectUser(user));
         this.usersService.getUser(user.id).subscribe((data: any) => {
-            this.store.dispatch(new UsersActions.SelectUser(data.data));
+            this.userAllDetails = data.data;
         });
     }
 
@@ -49,7 +54,10 @@ export class ListComponent implements OnInit {
                 this.userContainer.nativeElement.clientHeight <
                 30 + this.userContainer.nativeElement.scrollTop
         ) {
-            this.usersService.addUsers();
+            this.loadMore = true;
+            this.usersService.addUsers().subscribe(data => {
+                this.loadMore = false;
+            });
         }
     }
 }

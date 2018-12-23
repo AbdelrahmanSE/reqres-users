@@ -2,7 +2,7 @@ import { User } from './../user.model';
 import * as UsersActions from './../store/users.actions';
 import { UsersState } from './../store/users-state.model';
 import { Store } from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'app-single',
@@ -10,15 +10,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./single.component.scss']
 })
 export class SingleComponent implements OnInit {
+    @Input()
     user: User;
 
     constructor(private store: Store<UsersState>) {}
 
-    ngOnInit() {
-        this.store.select('Users').subscribe(users => {
-            this.user = users.selected;
-        });
-    }
+    ngOnInit() {}
 
     close() {
         this.store.dispatch(new UsersActions.SelectUser(null));

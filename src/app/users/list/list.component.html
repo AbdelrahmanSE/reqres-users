@@ -38,13 +38,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="loading-more">
+                    <div class="loading-more" [hidden]="loadMore">
                         <img class="spinner" src="/assets/img/spinner.svg" alt="">
                         <div>Loading more users</div>
                     </div>
                 </div>
                 <div class="single-user-container">
-                    <app-single></app-single>
+                    <app-single [user]="userAllDetails"></app-single>
                 </div>
             </div>
         </div>

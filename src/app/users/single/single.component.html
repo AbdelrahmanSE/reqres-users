@@ -20,3 +20,7 @@
         <app-delete [btnType]="'expanded'" [user]="user" class="ml-2"></app-delete>
     </div>
 </div>
+<div class="loading-more" *ngIf="!user">
+    <img class="spinner" src="/assets/img/spinner.svg" alt="">
+    <div>Loading user data</div>
+</div>
