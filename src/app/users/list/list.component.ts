@@ -36,23 +36,19 @@ export class ListComponent implements OnInit {
     }
 
     selectUser(user: User) {
-        this.store.dispatch(new UsersActions.SelectUser(user));
+        this.usersService.getUser(user.id).subscribe((data: any) => {
+            this.store.dispatch(new UsersActions.SelectUser(data.data));
+        });
     }
 
     @HostListener('scroll', [])
     onScroll(): void {
-        console.log(
-            this.userContainer.nativeElement.scrollHeight -
-                this.userContainer.nativeElement.clientHeight,
-            this.userContainer.nativeElement.scrollTop
-        );
         if (
             this.users &&
             this.userContainer.nativeElement.scrollHeight -
                 this.userContainer.nativeElement.clientHeight <
                 30 + this.userContainer.nativeElement.scrollTop
         ) {
-            // Load Your Data Here
             this.usersService.addUsers();
         }
     }

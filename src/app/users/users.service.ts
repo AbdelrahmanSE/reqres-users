@@ -58,6 +58,13 @@ export class UsersService {
         return request;
     }
 
+    getUser(id) {
+        const request = this.httpClient.get(
+            AppConfig.REST_ROUTE + '/users/' + id
+        );
+        return request;
+    }
+
     addUser(fullname, jobtitle) {
         const name = fullname.split(' ');
 
