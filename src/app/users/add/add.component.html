@@ -1,1 +1,27 @@
-<button class="btn btn-primary">+ New User</button>
+<button class="btn btn-primary" (click)="open(content)">+ New User</button>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <div class="user-icon">
+      <img src="/assets/img/user.svg" alt="">
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Name...">
+      </div>
+      <div class="form-group">
+        <label for="jobtitle">Job title</label>
+        <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Job title...">
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary-outline w-50 text-bold mr-3">
+          Cancel
+        </button>
+        <button class="btn btn-primary w-50 text-bold">
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
