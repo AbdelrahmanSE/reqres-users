@@ -26,6 +26,13 @@ a {
   }
 }
 
+.btn-primary-outline{
+  border-color: $BTN_PRIMARY_COLOR;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 9px 25px !important;
+}
+
 .box {
   border-radius: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);

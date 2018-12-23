@@ -1,1 +1,3 @@
-<button class="btn-action"><img src="/assets/img/edit.svg" alt=""></button>
+<button class="btn-action" *ngIf="btnType === 'collapsed'"><img src="/assets/img/edit.svg" alt=""></button>
+
+<button class="btn btn-primary btn-sm btn-expanded" *ngIf="btnType === 'expanded'" ><img src="/assets/img/edit-white.svg" alt=""> Edit</button>
