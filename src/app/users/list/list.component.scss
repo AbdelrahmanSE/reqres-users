@@ -42,6 +42,40 @@
             &:hover {
                 background-color: rgba(142, 68, 173, 0.05);
             }
+
+            &.active {
+                background-color: #8e44ad;
+                margin-right: -40px;
+
+                .user-name {
+                    color: #fff;
+                }
+
+                app-edit,
+                app-delete {
+                    display: none;
+                }
+
+                .arrow {
+                    display: none;
+                }
+
+                .arrow-white {
+                    display: inline;
+                }
+
+                .centerialize {
+                    margin-left: -40px;
+                }
+            }
+
+            .arrow {
+                display: initial;
+            }
+
+            .arrow-white {
+                display: none;
+            }
         }
     }
 

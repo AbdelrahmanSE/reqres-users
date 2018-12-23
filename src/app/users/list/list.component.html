@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="list-item" *ngFor="let user of users" (click)="selectUser(user)">
-                            <div class="row">
+                            <div class="row" [ngClass]="(selected && selected.id === user.id) ? 'active' : ''">
                                 <div class="col-9">
                                     <div class="d-flex user-list">
                                         <img class="user-avatar" [hidden]="user.avatar === ''" [src]="user.avatar" alt="">
@@ -30,7 +30,8 @@
                                         <app-edit [user]="user"></app-edit>
                                         <app-delete [user]="user"></app-delete>
                                         <div>
-                                            <img src="/assets/img/right.svg" alt="">
+                                            <img class="arrow" src="/assets/img/right.svg" alt="">
+                                            <img class="arrow-white" src="/assets/img/right-white.svg" alt="">
                                         </div>
                                     </div>
                                 </div>
