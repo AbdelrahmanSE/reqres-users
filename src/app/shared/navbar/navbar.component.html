@@ -20,7 +20,10 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-primary" href="#">Login</a>
+                    <a class="nav-link btn-primary" href="#" *ngIf="!authService.isLogged()">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-primary" href="#" *ngIf="authService.isLogged()" (click)="logout()">Logout</a>
                 </li>
             </ul>
         </div>
