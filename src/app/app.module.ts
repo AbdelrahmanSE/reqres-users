@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { UsersReducers } from './users/store/users.reducers';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,6 +22,7 @@ import { RouterModule } from '@angular/router';
     AuthModule,
     UsersModule,
     SharedModule,
+    StoreModule.forRoot({Users: UsersReducers}),
     RouterModule.forRoot(routes)
   ],
   providers: [AuthService, AuthGuard],

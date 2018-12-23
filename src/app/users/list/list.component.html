@@ -14,53 +14,12 @@
                                 Actions
                             </div>
                         </div>
-                        <div class="list-item">
+                        <div class="list-item" *ngFor="let user of users">
                             <div class="row">
                                 <div class="col-9">
                                     <div class="d-flex user-list">
-                                        <img class="user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
-                                            alt="">
-                                        <div class="user-name">John Doe</div>
-                                    </div>
-                                </div>
-                                <div class="col-3 centerialize">
-                                    <div>
-                                        <app-edit></app-edit>
-                                        <app-delete></app-delete>
-                                        <div>
-                                            <img src="/assets/img/right.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="row">
-                                <div class="col-9">
-                                    <div class="d-flex user-list">
-                                        <img class="user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
-                                            alt="">
-                                        <div class="user-name">John Doe</div>
-                                    </div>
-                                </div>
-                                <div class="col-3 centerialize">
-                                    <div>
-                                        <app-edit></app-edit>
-                                        <app-delete></app-delete>
-                                        <div>
-                                            <img src="/assets/img/right.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="row">
-                                <div class="col-9">
-                                    <div class="d-flex user-list">
-                                        <img class="user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
-                                            alt="">
-                                        <div class="user-name">John Doe</div>
+                                        <img class="user-avatar" [src]="user.avatar" alt="">
+                                        <div class="user-name">{{ user.first_name }} {{ user.last_name }}</div>
                                     </div>
                                 </div>
                                 <div class="col-3 centerialize">
