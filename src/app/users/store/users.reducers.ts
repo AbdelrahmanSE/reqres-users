@@ -10,12 +10,27 @@ export function UsersReducers(
     action: UsersActions.UsersActions
 ) {
     switch (action.type) {
+        case UsersActions.SET_USERS:
+            return {
+                ...state,
+                users: action.payload
+            };
+        case UsersActions.SELECT_USER:
+            return {
+                ...state,
+                users: action.payload
+            };
         case UsersActions.ADD_USER:
             return {
                 ...state,
                 users: [...state.users, action.payload]
             };
-        case UsersActions.SET_USERS:
+        case UsersActions.EDIT_USER:
+            return {
+                ...state,
+                users: action.payload
+            };
+        case UsersActions.DELETE_USER:
             return {
                 ...state,
                 users: action.payload
