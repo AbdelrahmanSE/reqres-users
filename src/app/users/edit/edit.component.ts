@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,9 +10,11 @@ export class EditComponent implements OnInit {
   @Input()
   btnType = 'collapsed';
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  open(content) {
+    this.modalService.open(content);
   }
-
 }
