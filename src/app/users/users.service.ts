@@ -42,4 +42,14 @@ export class UsersService {
         });
         return request;
     }
+
+    deleteUser(user: User) {
+        const request = this.httpClient.delete(
+            AppConfig.REST_ROUTE + '/users/' + user.id
+        );
+        request.subscribe((payload: any) => {
+            this.store.dispatch(new UsersActions.DeleteUser(user));
+        });
+        return request;
+    }
 }

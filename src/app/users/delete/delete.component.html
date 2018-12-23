@@ -13,14 +13,14 @@
                     Are you sure you want to delete
                 </div>
                 <div class="user-name">
-                    Jone Doe
+                    {{ user.first_name }} {{ user.last_name }}
                 </div>
             </div>
             <div class="d-flex">
-                <button class="btn btn-primary-outline w-50 text-bold mr-3">
+                <button class="btn btn-primary-outline w-50 text-bold mr-3" (click)="modal.close()">
                     No
                 </button>
-                <button class="btn btn-primary w-50 text-bold">
+                <button class="btn btn-primary w-50 text-bold" (click)="delete()">
                     Yes
                 </button>
             </div>

@@ -40,9 +40,15 @@ export function UsersReducers(
                 users: users
             };
         case UsersActions.DELETE_USER:
+            const userIndexD = state.users.findIndex(
+                (sUser: User) => sUser.id === action.payload.id
+            );
+            const dUsers = [...state.users];
+            dUsers.splice(userIndexD, 1);
             return {
                 ...state,
-                users: action.payload
+                users: dUsers,
+                selected: null
             };
         default:
             return state;
