@@ -1,18 +1,19 @@
 @import "../../../variables";
 
 nav {
-  height: 70px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+    height: 70px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
 
-  .nav-link {
-    font-size: 1rem;
-    font-weight: bold;
-    color: $SECONDARY_FONT_COLOR;
-    margin: 0 15px;
-    text-transform: uppercase;
-    &:last-child{
-      margin-right: 0;
+    .nav-link {
+        font-size: 1rem;
+        font-weight: bold;
+        color: $SECONDARY_FONT_COLOR;
+        margin: 0 15px;
+        text-transform: uppercase;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
-  }
 }
