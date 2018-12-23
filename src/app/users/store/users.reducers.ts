@@ -1,9 +1,7 @@
 import { UsersState } from './users-state.model';
 import * as UsersActions from './users.actions';
 
-const initialState: UsersState = {
-    users: []
-};
+const initialState = new UsersState();
 
 export function UsersReducers(
     state = initialState,
@@ -15,10 +13,15 @@ export function UsersReducers(
                 ...state,
                 users: action.payload
             };
+        case UsersActions.ADD_USERS:
+            return {
+                ...state,
+                users: [...state.users, ...action.payload]
+            };
         case UsersActions.SELECT_USER:
             return {
                 ...state,
-                users: action.payload
+                selected: action.payload
             };
         case UsersActions.ADD_USER:
             return {

@@ -2,6 +2,7 @@ import { User } from './../user.model';
 import { Action } from '@ngrx/store';
 
 export const SET_USERS = 'SET_USERS';
+export const ADD_USERS = 'ADD_USERS';
 export const SELECT_USER = 'SELECT_USER';
 export const ADD_USER = 'ADD_USER';
 export const EDIT_USER = 'EDIT_USER';
@@ -9,6 +10,11 @@ export const DELETE_USER = 'DELETE_USER';
 
 export class SetUsers implements Action {
     readonly type = SET_USERS;
+    constructor(public payload: User[]) {}
+}
+
+export class AddUsers implements Action {
+    readonly type = ADD_USERS;
     constructor(public payload: User[]) {}
 }
 
@@ -33,4 +39,4 @@ export class DeleteUser implements Action {
 }
 
 
-export type UsersActions = SetUsers | SelectUser | AddUser | EditUser | DeleteUser;
+export type UsersActions = SetUsers | AddUsers | SelectUser | AddUser | EditUser | DeleteUser;

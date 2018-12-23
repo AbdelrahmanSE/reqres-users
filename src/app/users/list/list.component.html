@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="box d-flex">
+            <div class="box d-flex" [ngClass]="(selected) ? 'opened' : ''">
                 <div class="users-list-container">
                     <div class="users-list">
                         <div class="row list-header">
@@ -14,7 +14,7 @@
                                 Actions
                             </div>
                         </div>
-                        <div class="list-item" *ngFor="let user of users">
+                        <div class="list-item" *ngFor="let user of users" (click)="selectUser(user)">
                             <div class="row">
                                 <div class="col-9">
                                     <div class="d-flex user-list">
