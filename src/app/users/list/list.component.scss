@@ -65,6 +65,18 @@
             }
         }
     }
+
+    .user-icon {
+        background-color: #7f8c8d;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        border-radius: 50%;
+
+        img {
+            margin: auto;
+        }
+    }
 }
 
 

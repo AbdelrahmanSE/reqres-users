@@ -4,9 +4,12 @@
             <img src="/assets/img/close.svg" alt="">
         </button>
     </div>
-    <div *ngIf="user" >
-        <div class="avatar">
-            <img  [src]="user.avatar" alt="">
+    <div *ngIf="user">
+        <div class="avatar" [hidden]="user.avatar === ''">
+            <img [src]="user.avatar" alt="">
+        </div>
+        <div class="user-icon" [hidden]="user.avatar !== ''">
+            <img src="/assets/img/user.svg" alt="">
         </div>
         <div class="name">
             {{ user.first_name }} {{ user.last_name }}

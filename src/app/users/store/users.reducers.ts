@@ -27,7 +27,7 @@ export function UsersReducers(
         case UsersActions.ADD_USER:
             return {
                 ...state,
-                users: [...state.users, action.payload]
+                users: [action.payload, ...state.users]
             };
         case UsersActions.EDIT_USER:
             const userIndex = state.users.findIndex(

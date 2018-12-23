@@ -23,6 +23,24 @@ export class UsersService {
         return request;
     }
 
+    addUser(fullname, jobtitle) {
+        const name = fullname.split(' ');
+
+        const first_name = name[0] ? name[0] : '';
+        const last_name = name[1] ? name[1] : '';
+
+        const request = this.httpClient.post(AppConfig.REST_ROUTE + '/users/', {
+            name: fullname,
+            job: jobtitle
+        });
+        request.subscribe((payload: any) => {
+            const id = payload.id;
+            const user = new User(id, first_name, last_name, jobtitle, '');
+            this.store.dispatch(new UsersActions.AddUser(user));
+        });
+        return request;
+    }
+
     editUser(user: User, fullname, jobtitle) {
         const name = fullname.split(' ');
 

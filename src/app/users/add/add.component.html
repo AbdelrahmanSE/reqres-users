@@ -5,20 +5,20 @@
         <div class="user-icon">
             <img src="/assets/img/user.svg" alt="">
         </div>
-        <form>
+        <form #f="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Name...">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name..." ngModel>
             </div>
             <div class="form-group">
                 <label for="jobtitle">Job title</label>
-                <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Job title...">
+                <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Job title..." ngModel>
             </div>
             <div class="d-flex">
-                <button class="btn btn-primary-outline w-50 text-bold mr-3">
+                <button class="btn btn-primary-outline w-50 text-bold mr-3" (click)="modal.close()">
                     Cancel
                 </button>
-                <button class="btn btn-primary w-50 text-bold">
+                <button class="btn btn-primary w-50 text-bold" (click)="add(f)">
                     Add
                 </button>
             </div>
