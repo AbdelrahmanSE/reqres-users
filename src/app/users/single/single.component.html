@@ -1,10 +1,10 @@
-<div class="single-container">
+<div class="single-container" *ngIf="user">
     <div class="close-icon">
         <button (click)="close()">
             <img src="/assets/img/close.svg" alt="">
         </button>
     </div>
-    <div *ngIf="user">
+    <div>
         <div class="avatar" [hidden]="user.avatar === ''">
             <img [src]="user.avatar" alt="">
         </div>
