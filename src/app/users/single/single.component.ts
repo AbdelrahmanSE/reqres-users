@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./single.component.scss']
 })
 export class SingleComponent implements OnInit {
-    user = User;
+    user: User;
 
     constructor(private store: Store<UsersState>) {}
 

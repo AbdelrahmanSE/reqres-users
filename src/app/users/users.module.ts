@@ -7,9 +7,10 @@ import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { UsersHeaderComponent } from './users-header/users-header.component';
 import { UsersService } from './users.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [CommonModule, FormsModule],
     declarations: [
         ListComponent,
         SingleComponent,

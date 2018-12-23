@@ -1,5 +1,6 @@
 import { UsersState } from './users-state.model';
 import * as UsersActions from './users.actions';
+import { User } from '../user.model';
 
 const initialState = new UsersState();
 
@@ -29,9 +30,14 @@ export function UsersReducers(
                 users: [...state.users, action.payload]
             };
         case UsersActions.EDIT_USER:
+            const userIndex = state.users.findIndex(
+                (sUser: User) => sUser.id === action.payload.id
+            );
+            const users = [...state.users];
+            users[userIndex] = action.payload;
             return {
                 ...state,
-                users: action.payload
+                users: users
             };
         case UsersActions.DELETE_USER:
             return {
