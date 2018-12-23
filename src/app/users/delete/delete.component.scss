@@ -1,6 +1,23 @@
 @import "../../../variables";
 
-.btn-expanded{
+.btn-expanded {
   font-weight: bold;
   color: $BTN_PRIMARY_COLOR;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 14px;
+
+  >div:first-child {
+    margin-bottom: 12px;
+    color: #7f8c8d;
+  }
+}
+
+.user-name {
+  color: $SECONDARY_FONT_COLOR;
+  margin: auto 10px;
+  font-weight: 500;
 }

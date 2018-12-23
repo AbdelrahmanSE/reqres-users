@@ -1,3 +1,29 @@
-<button class="btn-action" *ngIf="btnType === 'collapsed'"><img src="/assets/img/delete.svg" alt=""></button>
+<button class="btn-action" *ngIf="btnType === 'collapsed'" (click)="open(content)"><img src="/assets/img/delete.svg"
+    alt=""></button>
 
-<button class="btn btn-primary-outline btn-sm btn-expanded" *ngIf="btnType === 'expanded'" ><img src="/assets/img/delete.svg" alt=""> Delete</button>
+<button class="btn btn-primary-outline btn-sm btn-expanded" *ngIf="btnType === 'expanded'" (click)="open(content)"><img
+    src="/assets/img/delete.svg" alt=""> Delete</button>
+
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <form>
+      <div class="message">
+        <div>
+          Are you sure you want to delete
+        </div>
+        <div class="user-name">
+          Jone Doe
+        </div>
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary-outline w-50 text-bold mr-3">
+          No
+        </button>
+        <button class="btn btn-primary w-50 text-bold">
+          Yes
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>

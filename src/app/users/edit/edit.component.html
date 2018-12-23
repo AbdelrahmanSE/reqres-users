@@ -1,29 +1,30 @@
 <button class="btn-action" *ngIf="btnType === 'collapsed'" (click)="open(content)"><img src="/assets/img/edit.svg" alt=""></button>
 
-<button class="btn btn-primary btn-sm btn-expanded" *ngIf="btnType === 'expanded'" (click)="open(content)"><img src="/assets/img/edit-white.svg" alt=""> Edit</button>
+<button class="btn btn-primary btn-sm btn-expanded" *ngIf="btnType === 'expanded'" (click)="open(content)"><img src="/assets/img/edit-white.svg"
+    alt=""> Edit</button>
 
 <ng-template #content let-modal>
-    <div class="modal-body">
-      <div class="user-icon">
-        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg" alt="">
-      </div>
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" id="name" placeholder="Name...">
-        </div>
-        <div class="form-group">
-          <label for="jobtitle">Job title</label>
-          <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Job title...">
-        </div>
-        <div class="d-flex">
-          <button class="btn btn-primary-outline w-50 text-bold mr-3">
-            Cancel
-          </button>
-          <button class="btn btn-primary w-50 text-bold">
-            Save
-          </button>
-        </div>
-      </form>
+  <div class="modal-body">
+    <div class="user-icon">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg" alt="">
     </div>
-  </ng-template>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Name...">
+      </div>
+      <div class="form-group">
+        <label for="jobtitle">Job title</label>
+        <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Job title...">
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-primary-outline w-50 text-bold mr-3">
+          Cancel
+        </button>
+        <button class="btn btn-primary w-50 text-bold">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
