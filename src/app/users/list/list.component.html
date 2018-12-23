@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box d-flex" [ngClass]="(selected) ? 'opened' : ''">
-                <div class="users-list-container">
+                <div class="users-list-container" #userContainer (scroll)="onScroll()">
                     <div class="users-list">
                         <div class="row list-header">
                             <div class="col-10">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="loading-more">
-                        <img src="/assets/img/spinner.svg" alt="">
+                        <img class="spinner" src="/assets/img/spinner.svg" alt="">
                         <div>Loading more users</div>
                     </div>
                 </div>

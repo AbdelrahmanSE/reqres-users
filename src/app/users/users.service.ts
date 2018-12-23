@@ -5,20 +5,55 @@ import { UsersState } from './store/users-state.model';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { User } from './user.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UsersService {
+    currentPage: number;
+    total: number;
+    requestSent: boolean;
+
     constructor(
         private httpClient: HttpClient,
         private store: Store<UsersState>
     ) {}
 
     importUsers(page = 1) {
+        // Checks if a request was sent and so not send another request
+        if (this.requestSent) {
+            return new Observable<User[]>();
+        }
+        this.requestSent = true;
+
         const request = this.httpClient.get(
             AppConfig.REST_ROUTE + '/users?page=' + page
         );
         request.subscribe((payload: any) => {
+            this.requestSent = false;
+            this.total = payload.total_pages;
+            this.currentPage = payload.page;
             this.store.dispatch(new UsersActions.SetUsers(payload.data));
+        });
+        return request;
+    }
+
+    addUsers() {
+        // Checks if a request was sent and so not send another request
+        if (this.currentPage >= this.total || this.requestSent) {
+            return new Observable<User[]>();
+        }
+        this.requestSent = true;
+
+        const request = this.httpClient.get(
+            AppConfig.REST_ROUTE +
+                '/users?page=' +
+                (this.currentPage + 1).toString()
+        );
+        request.subscribe((payload: any) => {
+            this.requestSent = false;
+            this.total = payload.total_pages;
+            this.currentPage = payload.page;
+            this.store.dispatch(new UsersActions.AddUsers(payload.data));
         });
         return request;
     }
