@@ -19,6 +19,10 @@ export class LoginComponent implements OnInit {
         }
     }
 
+    /**
+     * Login on Click
+     * @param form
+     */
     login(form: NgForm) {
         this.error = '';
         const username = form.value.username;

@@ -20,6 +20,10 @@ export class AddComponent implements OnInit {
         this.modalService.open(content);
     }
 
+    /**
+     * Adds the User on Click
+     * @param form
+     */
     add(form: NgForm) {
         this.usersService
             .addUser(form.value.name, form.value.jobtitle)

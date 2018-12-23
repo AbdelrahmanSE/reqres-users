@@ -6,6 +6,9 @@ import {
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 
+/**
+ * This Authentication Guard Services prevents the user from accessing protected pages
+ */
 @Injectable()
 export class AuthGuard implements CanActivate {
     constructor(private authService: AuthService) {}

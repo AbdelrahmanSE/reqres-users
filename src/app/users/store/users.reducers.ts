@@ -2,6 +2,10 @@ import { UsersState } from './users-state.model';
 import * as UsersActions from './users.actions';
 import { User } from '../user.model';
 
+/**
+ * NgRX Reducers
+ */
+
 const initialState = new UsersState();
 
 export function UsersReducers(

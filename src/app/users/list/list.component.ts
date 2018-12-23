@@ -21,9 +21,16 @@ export class ListComponent implements OnInit {
         private usersService: UsersService,
         private store: Store<UsersState>
     ) {}
-    users: User[];
-    selected: User;
+
     loadMore: boolean;
+
+    /** All the System users list */
+    users: User[];
+
+    /** The Selected user */
+    selected: User;
+
+    /** Holds the User All Data Details form the Single User API Request */
     userAllDetails: User;
 
     @ViewChild('userContainer') userContainer: ElementRef;

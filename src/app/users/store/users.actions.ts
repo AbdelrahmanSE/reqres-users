@@ -1,6 +1,10 @@
 import { User } from './../user.model';
 import { Action } from '@ngrx/store';
 
+/**
+ * NgRX Actions
+ */
+
 export const SET_USERS = 'SET_USERS';
 export const ADD_USERS = 'ADD_USERS';
 export const SELECT_USER = 'SELECT_USER';
