@@ -2,7 +2,7 @@
 
 This is a project to consume the [Reqres](https://reqres.in/ "Reqres") API
 
-##[ Live Demo](https://reqres-users.netlify.com " Live Demo")
+## [ Live Demo](https://reqres-users.netlify.com " Live Demo")
 
 ## Development server
 
